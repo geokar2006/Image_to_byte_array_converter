@@ -68,6 +68,7 @@ namespace Image_to_byte_array_converter
                             richTextBox1.Text += imageArray[i] + ", ";
                         }
                     }
+                    Application.DoEvents();
                 }
                 richTextBox1.Text += "}";
                 MessageBox.Show("Файл конвертирован");
