@@ -41,6 +41,17 @@ namespace Image_to_byte_array_converter
         {
             if (esl)
             {
+            /*FileStream stream = File.OpenRead(@"c:\path\to\your\file\here.txt");
+byte[] fileBytes= new byte[stream.Length];
+
+stream.Read(fileBytes, 0, fileBytes.Length);
+stream.Close();
+//Begins the process of writing the byte array back to a file
+
+using (Stream file = File.OpenWrite(@"c:\path\to\your\file\here.txt"))
+{
+   file.Write(fileBytes, 0, fileBytes.Length);
+}*/
                 int lg = imageArray.Length;
                 richTextBox1.Text += "byte[] data = new byte[]{";
                 for (int i = 0; i < lg; ++i)
