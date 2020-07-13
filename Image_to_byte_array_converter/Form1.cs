@@ -52,7 +52,7 @@ using (Stream file = File.OpenWrite(@"c:\path\to\your\file\here.txt"))
 }*/
                 richTextBox1.Text += "byte[] data = new byte[]{";
                 richTextBox1.Text += fileBytes;
-                richTextBox1.Text += "}";
+                richTextBox1.Text += "};";
                 MessageBox.Show("Файл конвертирован");
                 esl2 = true;
             }
