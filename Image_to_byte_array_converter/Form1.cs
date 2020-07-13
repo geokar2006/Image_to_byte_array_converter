@@ -16,7 +16,7 @@ namespace Image_to_byte_array_converter
     {
         bool esl = false;
         bool esl2 = false;
-        byte[] imageArray = null;
+        byte[] fileBytes = null;
         private OpenFileDialog ofd;
 
         public Form1()
@@ -32,7 +32,10 @@ namespace Image_to_byte_array_converter
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 esl = true;
-                imageArray = File.ReadAllBytes(ofd.FileName);
+                FileStream stream = File.OpenRead(ofd.FileName);
+                byte[] fileBytes= new byte[stream.Length];
+                stream.Read(fileBytes, 0, fileBytes.Length);
+                stream.Close();
             }
         }
 
@@ -41,46 +44,14 @@ namespace Image_to_byte_array_converter
         {
             if (esl)
             {
-            /*FileStream stream = File.OpenRead(@"c:\path\to\your\file\here.txt");
-byte[] fileBytes= new byte[stream.Length];
-
-stream.Read(fileBytes, 0, fileBytes.Length);
-stream.Close();
-//Begins the process of writing the byte array back to a file
+            /*
 
 using (Stream file = File.OpenWrite(@"c:\path\to\your\file\here.txt"))
 {
    file.Write(fileBytes, 0, fileBytes.Length);
 }*/
-                int lg = imageArray.Length;
                 richTextBox1.Text += "byte[] data = new byte[]{";
-                for (int i = 0; i < lg; ++i)
-                {
-                    if (i + 1 == lg)
-                    {
-                        if(imageArray[i] == 255)
-                        {
-                            richTextBox1.Text += "byte.MaxValue";
-                        }
-                        else
-                        {
-                            richTextBox1.Text += imageArray[i];
-                        }
-                        
-                    }
-                    else
-                    {
-                        if (imageArray[i] == 255)
-                        {
-                            richTextBox1.Text += "byte.MaxValue, ";
-                        }
-                        else
-                        {
-                            richTextBox1.Text += imageArray[i] + ", ";
-                        }
-                    }
-                    Application.DoEvents();
-                }
+                richTextBox1.Text += fileBytes;
                 richTextBox1.Text += "}";
                 MessageBox.Show("Файл конвертирован");
                 esl2 = true;
