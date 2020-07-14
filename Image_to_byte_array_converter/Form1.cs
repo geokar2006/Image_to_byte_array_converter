@@ -108,10 +108,5 @@ namespace Image_to_byte_array_converter
             Form2 f = new Form2();
             f.ShowDialog();
         }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
