@@ -45,7 +45,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Открыть фото";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form_openfile);
+            this.button1.Click += new System.EventHandler(this.Form_openfile);
             // 
             // button2
             // 
@@ -55,7 +55,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Конвертировать";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form_convert);
+            this.button2.Click += new System.EventHandler(this.Form_convert);
             // 
             // richTextBox1
             // 
@@ -74,7 +74,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "Сохранить";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form_Save);
+            this.button3.Click += new System.EventHandler(this.Form_Save);
             // 
             // button4
             // 
@@ -84,8 +84,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "Сбросить";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            this.button4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form_sbros);
+            this.button4.Click += new System.EventHandler(this.Form_sbros);
             // 
             // button5
             // 
@@ -96,7 +95,7 @@
             this.button5.TabIndex = 5;
             this.button5.Text = "Автор";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.avtor);
+            this.button5.Click += new System.EventHandler(this.avtor);
             // 
             // Form1
             // 

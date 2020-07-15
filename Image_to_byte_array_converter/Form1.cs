@@ -51,7 +51,7 @@ namespace Image_to_byte_array_converter
                 {
                     char str1 = g[0];
                     char str2 = g[1];
-                    string str3 = "0x"+str1 + str2;
+                    string str3 = "0x" + str1 + str2;
                     ga.Add(str3);
                     g = g.Remove(0, 2);
                     Application.DoEvents();
