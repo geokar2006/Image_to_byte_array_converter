@@ -47,22 +47,20 @@ namespace Image_to_byte_array_converter
             if (esl)
             {
                 int lg = g.Length;
-                for (int i = 0; i < lg/2; ++i)
+                for (int i = 0; i < lg / 2; ++i)
                 {
                     char str1 = g[0];
                     char str2 = g[1];
-                    string str3 = "0x" + str1 + str2;
-                    ga.Add(str3);
-                    g = g.Remove(0, 2);
-                    Application.DoEvents();
-                }
-                int lg2 = ga.Count;
-                for (int i = 0; i < lg2; ++i)
-                {
-                    if (i+1 != lg2)
-                    {
-                        ga[i] += ", ";
+                if (i + 1 != lg / 2) { 
+                    string str3 = "0x" + str1 + str2 + ", ";
+                        ga.Add(str3);
                     }
+                    else
+                    {
+                        string str3 = "0x" + str1 + str2;
+                        ga.Add(str3);
+                    }
+                    g = g.Remove(0, 2);
                     Application.DoEvents();
                 }
                 richTextBox1.Lines = ga.ToArray();
